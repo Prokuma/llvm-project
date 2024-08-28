@@ -1,0 +1,10 @@
+set(LLVM_TARGET_DEFINITIONS IMAXOps.td)
+mlir_tablegen(IMAXOps.h.inc -gen-op-decls)
+mlir_tablegen(IMAXOps.cpp.inc -gen-op-defs)
+mlir_tablegen(IMAXDialect.h.inc -gen-dialect-decls)
+add_public_tablegen_target(IMAXOpsIncGen)
+
+set(LLVM_TARGET_DEFINITIONS IMAXBase.td)
+mlir_tablegen(IMAXBase.h.inc -gen-struct-attr-decls)
+mlir_tablegen(IMAXBase.cpp.inc -gen-struct-attr-defs)
+add_public_tablegen_target(IMAXBaseIncGen)

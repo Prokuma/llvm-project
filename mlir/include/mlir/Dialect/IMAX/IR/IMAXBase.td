@@ -45,6 +45,10 @@ class IMAX_I32EnumAttr<string mnemonic, IMAX_I32Enum enumInfo> :
     let assemblyFormat = "<` $value `>";
 }
 
+class IMAX_IntegerType : Type {
+  let cppNamespace = "::mlir::imax";
+}
+
 def IMAX_AddressSpaceGlobal : I32EnumAttrCase<"Global", 1, "global">;
 def IMAX_AddressSpaceWorkgroup : I32EnumAttrCase<"Workgroup", 2, "workgroup">;
 def IMAX_AddressSpacePrivate : I32EnumAttrCase<"Private", 3, "private">;
